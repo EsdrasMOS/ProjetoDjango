@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detalhes do Sócio</h1>
+    <p><strong>Nome:</strong> {{ socio.nome }}</p>
+    <p><strong>CPF:</strong> {{ socio.cpf }}</p>
+    <p><strong>Telefone:</strong> {{ socio.telefone }}</p>
+    <p><strong>Email:</strong> {{ socio.email }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ socio.data_nascimento }}</p>
+    <a href="{% url 'lista_socios' %}">Voltar à lista</a>
+</body>
+</html>

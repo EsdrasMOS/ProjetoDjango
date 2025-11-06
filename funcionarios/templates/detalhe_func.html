@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Detalhes do Funcionário</h1>
+    <p><strong>Nome:</strong> {{ funcionario.nome }}</p>
+    <p><strong>Função:</strong> {{ fun{% comment %}  {% endcomment %}cionario.funcao }}</p>
+    <p><strong>Identificação:</strong> {{ funcionario.identificacao }}</p>
+    <a href="{% url 'lista_funcionarios' %}">Voltar à lista</a>
+  </body>
+</html>
