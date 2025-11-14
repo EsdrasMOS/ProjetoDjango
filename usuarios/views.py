@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegistroSocioForm, RegistroFuncionarioForm
 
 def pagina_inicial(request):
-    return render(request, '../template/pagina_inicial.html')
+    return render(request, '../template/index.html')
 
 def login_usuario(request):
     if request.method == 'POST':
