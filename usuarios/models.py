@@ -9,3 +9,4 @@ class Usuario(AbstractUser):
         (IS_FUNCIONARIO, 'Funcionário'),
     ]
     tipo_usuario = models.CharField(max_length=15, choices=TIPOS)
+

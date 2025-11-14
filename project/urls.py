@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render, redirect 
+
+def pagina_inicial(request):
+    return render(request, 'usuarios/index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('usuarios.urls')),
+    path('usuarios/', include('usuarios.urls')),
     path('socios/', include('socios.urls')),       
     path('funcionarios/', include('funcionarios.urls')),
+    path('', pagina_inicial, name='pagina_inicial'),
 ]

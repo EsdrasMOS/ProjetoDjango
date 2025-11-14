@@ -4,8 +4,17 @@
 
 {% block content %}
     <h1>Cadastro de Sócio</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
     <form method="post">
         {% csrf_token %}
+        <!-- Campos do form Django (username e password) -->
+        {{ form.as_p }}
+        
+        <!-- Campos manuais extras (do modelo Socio) -->
         <div class="form-group">
             <label for="id_nome">Nome Completo</label>
             <input type="text" name="nome" id="id_nome" required>
@@ -15,16 +24,16 @@
             <input type="text" name="cpf" id="id_cpf" required>
         </div>
         <div class="form-group">
+            <label for="id_telefone">Telefone</label>
+            <input type="text" name="telefone" id="id_telefone">
+        </div>
+        <div class="form-group">
             <label for="id_email">E-mail</label>
-            <input type="email" name="email" id="id_email" required>
+            <input type="email" name="email" id="id_email">
         </div>
         <div class="form-group">
-            <label for="id_senha">Senha</label>
-            <input type="password" name="senha" id="id_senha" required>
-        </div>
-        <div class="form-group">
-            <label for="id_confirmar_senha">Confirmar Senha</label>
-            <input type="password" name="confirmar_senha" id="id_confirmar_senha" required>
+            <label for="id_data_nascimento">Data de Nascimento</label>
+            <input type="date" name="data_nascimento" id="id_data_nascimento">
         </div>
         <button type="submit" class="btn">Cadastrar</button>
     </form>
